@@ -4,5 +4,5 @@ My .vim dir backup
 How to use it :
 
 ```
-git clone https://github.com/kingzs70/vimrc.git ~/.vim/
+git clone hhttps://github.com/yongboy/.vim.git ~/.vim/
 ```
