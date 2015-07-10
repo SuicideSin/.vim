@@ -1,0 +1,52 @@
+source ~/.vim/vimerl.vim
+"ir_black molokai peaksea
+"colorscheme peaksea
+syntax enable
+set background=light
+
+if has('gui_running')
+        set background=light
+    else
+            set background=dark
+endif
+
+colorscheme solarized
+
+" for ctags settings...
+:set tags^=/home/yongboy/ctags_dir/erlang.tags
+:set tags^=/home/yongboy/ctags_dir/weibo.deps.tags
+:set tags^=/home/yongboy/ctags_dir/weibo.neo_base.tags 
+:set nospell
+" end...
+
+"nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+"nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+"nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map t :TaskList<CR>
+
+" settings for vim.ref
+let g:ref_use_vimproc = 1
+let g:ref_open = 'vsplit'
+let g:ref_cache_dir = expand($TMP . '/vim_ref_cache/')
+nno <leader>mm :<C-u>Unite ref/erlang
+            \ -vsplit -default-action=split<CR>
+" edn...
+
+"let g:EasyMotion_leader_key='<Space>'
+
+
+
+let g:ycm_key_list_select_completion = ['<c-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<c-p>', '<Up>']
+
+autocmd FileType * call UltiSnips#FileTypeChanged()
+" just for UltiSnips
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+"
+" " If you want :UltiSnipsEdit to split your window.
+"let g:UltiSnipsEditSplit="vertical"
+" end...
